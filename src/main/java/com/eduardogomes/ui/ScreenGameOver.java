@@ -33,11 +33,11 @@ public class ScreenGameOver extends JPanel {
 
         gameOverLabel = new JLabel("Game Over!");
         gameOverLabel.setForeground(Color.WHITE);
-        gameOverLabel.setFont(new Font("Arial", Font.BOLD, 40));
+        gameOverLabel.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
 
         restartLabel = new JLabel("Pressione espaço para reiniciar!");
         restartLabel.setForeground(Color.WHITE);
-        restartLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        restartLabel.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 
         this.add(gameOverLabel, gbc);
         this.add(restartLabel, gbc);

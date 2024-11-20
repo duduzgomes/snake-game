@@ -1,8 +1,10 @@
 package com.eduardogomes.models;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.eduardogomes.Utils;
 import com.eduardogomes.ui.GameListener;
 
 public class SnakeGame {
@@ -23,10 +25,9 @@ public class SnakeGame {
     public SnakeGame() {
         this.food = new Food();
         this.snakeOne = new Snake();
-        // this.scores = new ArrayList<>();
         this.score = 0;
         this.bestScore = 0;
-        this.running = true;
+        this.running = false;
         this.gameListeners = new ArrayList<>();
     }
 
@@ -50,31 +51,42 @@ public class SnakeGame {
         }
     }
 
-        public void checkCollision(){
-            if(snakeOne.getBody().size() > 1 && snakeOne.getBody().subList(1, snakeOne.getBody().size() -1).contains(snakeOne.getHead()) 
-                || snakeOne.getHead().getX() < 0 
-                || snakeOne.getHead().getX() >= WIDTH 
-                || snakeOne.getHead().getY() < 0
-                || snakeOne.getHead().getY() >= HEIGHT){
-                    this.running = false;
-                    notifyGameStopped();
-                    if(score > bestScore){
-                        bestScore = score;
-                    }
-            }
-
-            if(snakeOne.getHead().equals(food.getFood())){
-                food.spawnFood();
-                this.score += 10;
-                notifyUpdateScore(score);
-                System.out.println("score:" + score);
-            }else{
-                snakeOne.removeTail();
-            }
+    public void checkCollision(){
+        if(snakeOne.getBody().size() > 1 && snakeOne.getBody().subList(1, snakeOne.getBody().size() -1).contains(snakeOne.getHead()) 
+            || snakeOne.getHead().getX() < 0 
+            || snakeOne.getHead().getX() >= WIDTH 
+            || snakeOne.getHead().getY() < 0
+            || snakeOne.getHead().getY() >= HEIGHT){
+                this.running = false;
+                notifyGameStopped();
+                if(score > bestScore){
+                    bestScore = score;
+                }
         }
 
+        if(snakeOne.getHead().equals(food.getFood())){
+            spawnFood();
+            this.score += 10;
+            notifyUpdateScore(score);
+            System.out.println("score:" + score);
+        }else{
+            snakeOne.removeTail();
+        }
+    }
+
+    public void spawnFood(){
+        Point newFood;
+        do {
+            newFood = Utils.randomPosition();
+        } while (snakeOne.getBody().contains(newFood));
+
+        food.addFood(newFood);
+
+    }
+        
+
     public void startGame(){
-        food.spawnFood();
+        spawnFood();
         snakeOne.reset();
         score = 0;
         running = true;
@@ -84,7 +96,6 @@ public class SnakeGame {
     public void update(){
         snakeOne.move();
         checkCollision();
-        System.out.println(String.format("[%.1f, %.1f]", snakeOne.getHead().getX(), snakeOne.getHead().getY()));
     }
 
     public Snake getSnakeOne(){

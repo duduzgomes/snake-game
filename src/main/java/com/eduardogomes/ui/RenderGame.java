@@ -19,15 +19,17 @@ public class RenderGame extends JPanel implements ActionListener, GameListener {
     Timer timer;
     ScreenGameOver screenGameOver;
     ScorePanel scorePanel;
-    
+    TutorialPanel tutorialPanel;
 
     public RenderGame(SnakeGame game, ScorePanel scorePanel){
         super();
         this.game = game;
         this.scorePanel = scorePanel;
         this.screenGameOver = new ScreenGameOver();
+        this.tutorialPanel = new TutorialPanel();
         this.timer = new Timer(game.getDelay(), this);
         add(screenGameOver);
+        add(tutorialPanel);
 
         setPreferredSize(new Dimension(SnakeGame.WIDTH, SnakeGame.HEIGHT));
         setBackground(new Color(33,33,33));
@@ -54,9 +56,12 @@ public class RenderGame extends JPanel implements ActionListener, GameListener {
                         game.getSnakeOne().changeDirection(SnakeDirection.RIGHT);
                         break;
                     case KeyEvent.VK_SPACE:
-                        game.startGame();
-                        screenGameOver.setVisible(false);
-                        timer.start();
+                        if(!game.isRunning()){
+                            game.startGame();
+                            tutorialPanel.setVisible(false);
+                            screenGameOver.setVisible(false);
+                            timer.start();
+                        }
                         break;
 
                 }
@@ -73,7 +78,6 @@ public class RenderGame extends JPanel implements ActionListener, GameListener {
             repaint(); // Repaint o painel para atualizar a tela
         }else{
             timer.stop();
-            screenGameOver.setVisible(true);
             
         }
     }
@@ -94,4 +98,11 @@ public class RenderGame extends JPanel implements ActionListener, GameListener {
         g.fillRect(game.getFood().getFood().x, game.getFood().getFood().y, SnakeGame.TILE_SIZE, SnakeGame.TILE_SIZE);
         
     }
+
+    @Override
+    public void onGameStopped() {
+        screenGameOver.setVisible(true);
+    }
+
+    
 }

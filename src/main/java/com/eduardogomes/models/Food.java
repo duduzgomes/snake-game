@@ -11,8 +11,8 @@ public class Food {
         this.food = Utils.randomPosition();
     }
 
-    public void spawnFood(){
-        this.food = Utils.randomPosition();
+    public void addFood(Point food){
+        this.food = food;
     }
 
     public Point getFood(){

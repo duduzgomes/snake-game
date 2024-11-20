@@ -28,11 +28,11 @@ public class ScorePanel extends JPanel implements GameListener {
         
         scoreLabel = new JLabel(String.format("Score: %d", game.getScore()));
         scoreLabel.setForeground(Color.WHITE);
-        scoreLabel.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        scoreLabel.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 
         bestScoreLabel = new JLabel(String.format("Record: %d", game.getBestScore()));
         bestScoreLabel.setForeground(Color.WHITE);
-        bestScoreLabel.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        bestScoreLabel.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 
         add(scoreLabel, BorderLayout.LINE_START);
         add(bestScoreLabel, BorderLayout.LINE_END);

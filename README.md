@@ -114,3 +114,7 @@ A mecânica do jogo envole comer as frutas aumentando a pontuação e seu tamanh
 - [ Gabriel ] Documentação revisada para clareza e rigor técnico.
 - [ Carlos ] Avaliação da eficácia do algoritmo em termos de tempo de execução, uso de recursos e precisão na resolução do problema.
 - [ Gabriel ] Avaliação da colaboração da equipe e cumprimento dos prazos.
+
+## Demo
+
+![demo](<demo/demo%20(2).gif>)
