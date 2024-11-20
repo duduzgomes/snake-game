@@ -12,7 +12,7 @@ Este é um simples jogo da cobrinha desenvolvido em Java usando a biblioteca Swi
 Antes de executar o jogo, você precisa ter o seguinte instalado:
 
 - [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) (versão 11 ou superior).
-- [Maven](https://maven.apache.org/download.cgi) (opcional, se você quiser usar para gerenciamento de dependências).
+- [Maven](https://maven.apache.org/download.cgi)
 
 ## Clonando o Repositório
 
@@ -27,13 +27,13 @@ git clone https://github.com/duduzgomes/snake-game
 Rode o comando:
 
 ```bash
-javac Main.java
+mvn compile
 ```
 
 Execute o jogo:
 
 ```bash
-java Main
+mvn exec:java
 ```
 
 ## Sobre o jogo

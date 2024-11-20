@@ -13,4 +13,25 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <build>
+        <plugins>
+            <!-- Plugin para rodar a classe principal -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.eduardogomes.Main</mainClass> <!-- Defina a classe principal aqui -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
