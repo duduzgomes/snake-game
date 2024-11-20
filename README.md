@@ -19,21 +19,21 @@ Antes de executar o jogo, você precisa ter o seguinte instalado:
 Clone este repositório em sua máquina local usando o seguinte comando:
 
 ```bash
-git clone https://github.com/duduzgomes/POO-Java.git
+git clone https://github.com/duduzgomes/snake-game
 ```
 
 ## Para executar o jogo
 
-Navegue até o diretório `game` e compile o arquivo:
+Rode o comando:
 
 ```bash
-javac SnakeGame.java
+javac Main.java
 ```
 
 Execute o jogo:
 
 ```bash
-java SnakeGame
+java Main
 ```
 
 ## Sobre o jogo
