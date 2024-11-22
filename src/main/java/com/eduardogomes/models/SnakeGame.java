@@ -1,6 +1,8 @@
 package com.eduardogomes.models;
 
 import java.awt.Point;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,8 +96,15 @@ public class SnakeGame {
     }
 
     public void update(){
+        Instant start = Instant.now();
+        for (long i = 0; i < 10_000_000f; i++) {
+            long a = i+ 1;
+        }
         snakeOne.move();
         checkCollision();
+        Instant end = Instant.now();
+        Duration duration = Duration.between(start, end);
+        System.out.println("Tempo de execução: " + duration.toMillis() + " ms");
     }
 
     public Snake getSnakeOne(){

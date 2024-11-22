@@ -118,3 +118,7 @@ A mecânica do jogo envole comer as frutas aumentando a pontuação e seu tamanh
 ## Demo
 
 ![demo](<demo/demo%20(2).gif>)
+
+### Tempo de execução
+
+![demo](demo/tempo-execucao.gif)
