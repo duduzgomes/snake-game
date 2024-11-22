@@ -4,8 +4,8 @@ Este é um simples jogo da cobrinha desenvolvido em Java usando a biblioteca Swi
 
 ## Integrantes
 
-- Carlos Eduardo Gomes
-- Gabriel Gomes
+- Carlos Eduardo Gomes - RGM: 30220335
+- Gabriel Gomes - RGM: 29832748
 
 ## Pré-requisitos
 
@@ -52,9 +52,9 @@ A mecânica do jogo envole comer as frutas aumentando a pontuação e seu tamanh
 
 ### Complexidade Algorítmica
 
-- Lógica do Movimento - Linear O(n).
+- Lógica do Movimento - Constante O(1).
 
-  Cada movimento da cobra envolve adicionar um novo segmento (cabeça) e remover o segmento mais antigo (cauda). Para isso, é necessário iterar sobre o corpo da cobra.
+  A adição de um novo elemento ao final da lista e remoção é uma operação de custo constante.
 
 - Detecção de Colisão - Linear O(n).
 
